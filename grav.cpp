@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
         }
     }
     else if (command == "-v" || command == "-version" || command == "--v") {
-        std::cout << "\033[32mGrav 0.1\033[0m\n";
+        std::cout << "\033[32mGrav 0.1.0\033[0m\n";
     }
 
     if (argc == 3) {
