@@ -22,9 +22,9 @@ int main(int argc, char** argv) {
 
             std::cout << "\033[32mSuccessfully Initialized grav repository.\033[0m\n";
         }
-    }
-    else if (command == "-v" || command == "-version" || command == "--v") {
-        std::cout << "Grav 0.1.0\033\n";
+        else if (command == "-v" || command == "-version" || command == "--v") {
+            std::cout << "Grav 0.1.0\n";
+        }
     }
 
     if (argc == 3) {
@@ -155,11 +155,12 @@ int main(int argc, char** argv) {
             if (!fs::exists(spath)) {
                 std::cout << "Version does not exist\n";
                 return 1;
-            }        
+            }      
             if (destination == "-c") {
+                fs::create_directory(".gravsrc");   
                 fs::copy(
                     spath,
-                    fs::current_path(),
+                    fs::path(".gravsrc"),
                     fs::copy_options::recursive |
                     fs::copy_options::overwrite_existing
                 );
