@@ -23,6 +23,9 @@ int main(int argc, char** argv) {
             std::cout << "\033[32mSuccessfully Initialized grav repository.\033[0m\n";
         }
     }
+    else if (command == "-v" || command == "-version" || command == "--v") {
+        std::cout << "\033[32mGrav 0.1\033[0m\n";
+    }
 
     if (argc == 3) {
         std::string command = argv[1];
